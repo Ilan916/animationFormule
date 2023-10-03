@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation des cartes</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            height: 600px;
+            position: relative;
+        }
+
+        @media screen and (max-width: 606px) {
+            .container  {
+                max-width: 90%;
+            }
+        }
+
+        .cards {
+            max-width: 500px;
+            width: 100%;
+            height: 500px;
+            margin: auto;
+            position: absolute;
+            background-color: white;
+            transition: top 0.5s ease-in-out;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        /* style first position */
+
+        .first-position {
+            z-index: 3;
+            top: 100px;
+            box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.08), 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
+
+        }
+
+        .first-position .header {
+            font-size: 20px;
+            height: 100px;
+        }
+
+        .first-position .header .info-formule {
+            margin-left: 15px;
+        }
+
+        .first-position .header .info-formule p {
+            color: white;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .first-position .header .info-formule .conseil {
+            margin-bottom: 10px;
+        }
+
+        .first-position .header .info-formule p:last-child {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .first-position .header .price {
+            margin-right: 15px;
+            color: #fff;
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .first-position .header .price p {
+            display: flex;
+            align-items: center;
+        }
+
+        .first-position .header .price span {
+            font-size: 16px;
+            font-weight: 400;
+            margin-left: 8px;
+        }
+
+         /* style second position */
+
+        .second-position {
+            z-index: 2;
+            top: 50px;
+        }
+
+        .second-position .header {
+            background-color: #E0E0E0;
+        }
+
+        /* style third position */
+
+        .third-position {
+            z-index: 1;
+            top: 0px;
+        }
+
+        .third-position .header {
+            background-color: #FFF3E6;
+        }
+
+
+        /* style second & third position */
+
+        
+
+        .second-position .header, .third-position .header {
+            height: 60px;
+            cursor: pointer;
+        }
+
+        .second-position .header .info-formule , .third-position .header .info-formule {
+            margin-left: 15px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .second-position .header .info-formule .conseil , .third-position .header .info-formule .conseil {
+            display: none;
+        }
+
+        .second-position .header .price , .third-position .header .price{
+            margin-right: 15px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .second-position .header .p , .third-position .header .p{
+            display: flex;
+            align-items: center;
+        }
+
+        .second-position .header .price span, .third-position .header .price span{ 
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        .second-position .header p, .third-position .header p {
+            color: #ffff;
+        }
+
+        #card-1 .header  {
+            background-color: #006A53;
+        }
+
+        #card-2 .header {
+            background-color: #01AC9E;
+        }
+
+        #card-3 .header {
+            background-color: #434550;
+        }
+
+
+        /* checkbox section css */
+
+        .div-checkbox {
+            width: 90%;
+            max-height: 70px;
+            height: 100%;
+            border-top: solid 1px #E0E0E0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="cards first-position" id="card-1">
+            <div class="header">
+                <div class="info-formule">
+                    <p class="conseil">Formule conseillée</p>
+                    <p>Basic</p>
+                </div>
+                <div class="price">
+                  <p>25,53 €<span> / mois</span></p>  
+                </div>
+            </div>
+
+            <div>
+                <p style="margin-top: 40px; margin-bottom: 40px;">Garanties incluses dans toutes nos offres +</p>
+            </div>
+
+            <div class="div-checkbox">
+                <input type="checkbox">
+            </div>
+            <div class="div-checkbox">
+                <input type="checkbox">
+            </div>
+            <div class="div-checkbox">
+                <input type="checkbox">
+            </div>
+        </div>
+
+        <div class="cards second-position" id="card-2">
+            <div class="header">
+                <div class="info-formule">
+                    <p></p>
+                    <p>Intermediaire</p>
+                </div>
+                <div class="price">
+                  <p>25,53 €<span> / mois</span></p>  
+                </div>
+            </div>
+        </div>
+
+        <div class="cards third-position" id="card-3">
+            <div class="header">
+                <div class="info-formule">
+                    <p></p>
+                    <p>Premium</p>
+                </div>
+                <div class="price">
+                  <p>25,53 €<span> / mois</span></p>  
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        let card1 = document.getElementById('card-1');
+        let card2 = document.getElementById('card-2');
+        let card3 = document.getElementById('card-3');
+
+        function exchangePositions(clickedCard, firstCard) {
+    if (clickedCard === firstCard) return;
+
+    const secondCard = document.querySelector('.second-position');
+
+    // Si la carte cliquée est en third-position, échangez la première et la seconde carte, puis déplacez la troisième carte en première position
+    if(clickedCard.classList.contains('third-position')) {
+        firstCard.classList.remove('first-position');
+        firstCard.classList.add('second-position');
+
+        secondCard.classList.remove('second-position');
+        secondCard.classList.add('third-position');
+
+        clickedCard.classList.remove('third-position');
+        clickedCard.classList.add('first-position');
+    }
+    // Si la carte cliquée est en second-position, échangez simplement la première et la seconde carte
+    else if(clickedCard.classList.contains('second-position')) {
+        clickedCard.classList.remove('second-position');
+        clickedCard.classList.add('first-position');
+
+        firstCard.classList.remove('first-position');
+        firstCard.classList.add('second-position');
+    }
+}
+
+        card1.addEventListener('click', function() {
+            const firstCard = document.querySelector('.first-position:not(#card-1)');
+            exchangePositions(card1, firstCard);
+        });
+
+        card2.addEventListener('click', function() {
+            const firstCard = document.querySelector('.first-position:not(#card-2)');
+            exchangePositions(card2, firstCard);
+        });
+
+        card3.addEventListener('click', function() {
+            const firstCard = document.querySelector('.first-position:not(#card-3)');
+            exchangePositions(card3, firstCard);
+        });
+
+    </script>
+</body>
+
+</html>
